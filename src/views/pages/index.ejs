@@ -1,0 +1,20 @@
+<%- include('../partials/head') %>
+
+    <body>
+        <Header>
+
+            <a href="/new">New Message</a>
+
+        </Header>
+        <p>Message Board </p>
+        <div>
+            <% messages.forEach((message)=> { %>
+                <div>
+                    <%= message.user %>
+                        <%= message.text %>
+                            <%= message.added %>
+                </div>
+                <% }) %>
+        </div>
+    </body>
+    <%- include('../partials/footer') %>
