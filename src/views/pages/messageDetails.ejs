@@ -1,0 +1,35 @@
+<%- include('../partials/head') %>
+
+    <body>
+        <header>
+            <h1>Message Details</h1>
+        </header>
+        <div>
+            <div>
+                <p>Message Text:</p>
+                <p>
+                    <%= message.text %>
+
+                </p>
+            </div>
+            <div>
+                <p>Message Send by:</p>
+                <p>
+                    <%= message.authorName %>
+
+                </p>
+            </div>
+            <div>
+                <p>Message Date:</p>
+                <p>
+                    <%= message.added %>
+
+                </p>
+            </div>
+
+        </div>
+
+    </body>
+
+
+    <%- include('../partials/footer') %>
