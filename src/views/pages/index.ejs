@@ -1,20 +1,34 @@
 <%- include('../partials/head') %>
 
     <body>
-        <Header>
+        <header>
+            <h1>Mini Message Board</h1>
 
-            <a href="/new">New Message</a>
-
-        </Header>
-        <p>Message Board </p>
-        <div>
-            <% messages.forEach((message)=> { %>
-                <div>
-                    <%= message.user %>
-                        <%= message.text %>
+        </header>
+        <div class="containerMain">
+            <div class="containerMessages">
+                <% messages.forEach((message)=> { %>
+                    <div class="messageCard">
+                        <p>
+                            <%= message.user %>
+                        </p>
+                        <p>
+                            <%= message.text %>
+                        </p>
+                        <p>
                             <%= message.added %>
-                </div>
-                <% }) %>
+                        </p>
+                        <a class="linkT" href="/message?id=<%= message.id %>">See Message</a>
+                    </div>
+                    <% }) %>
+            </div>
+
+            <a class="linkIndex" href="/new">New Message</a>
+
+
         </div>
+
+
     </body>
+
     <%- include('../partials/footer') %>

@@ -1,6 +1,27 @@
-<form method="POST" action="/new">
-    <input type="text" name="authorName">
-    <input type="text" name="text">
-    <input type="submit" value="Send">
+<%- include('../partials/head') %>
 
-</form>
+    <body>
+        <header>
+            <h1>Send a message</h1>
+        </header>
+        <div class="containerForm">
+
+            <form method="POST" action="/new" class="form">
+                <label for="authorName">Author:
+
+                    <input type="text" name="authorName" id="authorName">
+                </label>
+                <label for="text">
+                    Message:
+                    <input type="text" name="text" id="text">
+                </label>
+
+                <input type="submit" value="Send">
+
+            </form>
+        </div>
+
+    </body>
+
+
+    <%- include('../partials/footer') %>
