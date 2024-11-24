@@ -4,28 +4,32 @@
         <header>
             <h1>Message Details</h1>
         </header>
-        <div>
+        <div class="containerDetailMessage">
             <div>
-                <p>Message Text:</p>
-                <p>
-                    <%= message.text %>
+                <div>
+                    <p>Message Text:</p>
+                    <p>
+                        <%= message.text %>
 
-                </p>
-            </div>
-            <div>
-                <p>Message Send by:</p>
-                <p>
-                    <%= message.authorName %>
+                    </p>
+                </div>
+                <div>
+                    <p>Message Send by:</p>
+                    <p>
+                        <%= message.user %>
 
-                </p>
-            </div>
-            <div>
-                <p>Message Date:</p>
-                <p>
-                    <%= message.added %>
+                    </p>
+                </div>
+                <div>
+                    <p>Message Date:</p>
+                    <p>
+                        <%= message.added %>
 
-                </p>
+                    </p>
+                </div>
             </div>
+            <a href="/">Home</a>
+
 
         </div>
 
