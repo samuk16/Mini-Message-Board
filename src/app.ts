@@ -1,23 +1,19 @@
-const express = require("express");
-const path = require("node:path");
+import express from "express";
+import path from "node:path";
+import dotenv from "dotenv";
 import newMessageRouter from "./routes/new";
 import messageDetailsRouter from "./routes/messageDetails";
 import type { Request, Response, NextFunction } from "express";
+import indexRouter from "./routes";
+dotenv.config();
 const app = express();
-import { messages } from "./controllers/newMessageController";
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
-
-const assetsPath = path.join(__dirname, "../public");
-app.use(express.static(assetsPath));
-
+app.use(express.static(path.join(__dirname, "../public")));
 app.use(express.urlencoded({ extended: true }));
 
-app.get("/", (req: Request, res: Response) => {
-	res.render("pages/index", { messages: messages });
-});
-
+app.get("/", indexRouter);
 app.use("/new", newMessageRouter);
 app.use("/message", messageDetailsRouter);
 
@@ -30,6 +26,7 @@ app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
 	res.status(500).render("pages/404");
 });
 
-app.listen(3000, () => {
+const PORT = process.env.PORT || 8000;
+app.listen(PORT, () => {
 	console.log("Example app listening on port 3000!");
 });
