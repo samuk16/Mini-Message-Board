@@ -1,6 +1,5 @@
-import dotenv from "dotenv";
 import { Client } from "pg";
-dotenv.config();
+import { argv } from "node:process";
 
 const date = new Date();
 const SQL = `
@@ -24,7 +23,7 @@ VALUES
 async function main() {
 	console.log("seeding...");
 	const client = new Client({
-		connectionString: process.env.CONNECTION_DB_URL,
+		connectionString: argv[2],
 	});
 	try {
 		await client.connect();
