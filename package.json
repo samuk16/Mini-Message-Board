@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc && cp-cli src/views dist/views",
     "start": "node dist/app.js",
-    "dev":"nodemon src/app.ts",
+    "dev": "nodemon src/app.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -14,13 +14,17 @@
   "license": "ISC",
   "dependencies": {
     "ejs": "^3.1.10",
-    "express": "^4.21.1"
+    "express": "^4.21.1",
+    "express-validator": "^7.2.0",
+    "pg": "^8.13.1"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
     "@types/express": "^5.0.0",
     "@types/node": "^22.9.1",
+    "@types/pg": "^8.11.10",
     "cp-cli": "^2.0.0",
+    "dotenv": "^16.4.5",
     "nodemon": "^3.1.7",
     "ts-node": "^10.9.2",
     "tslib": "^2.8.1",
