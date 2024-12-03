@@ -1,14 +1,12 @@
-// const { Router } = require("express");
 import { Router } from "express";
 const newMessageRouter = Router();
 import {
 	getTemplateForm,
-	postNewMessage,
+	newMessagePost,
 } from "../controllers/newMessageController";
 
 newMessageRouter.get("/", getTemplateForm);
 
-newMessageRouter.post("/", postNewMessage);
+newMessageRouter.post("/", ...newMessagePost);
 
-// module.exports = newMessageRouter;
 export default newMessageRouter;

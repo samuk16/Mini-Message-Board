@@ -1,7 +1,7 @@
 import type { Request, Response } from "express";
-import { messages } from "./newMessageController";
+import { getMessage } from "../db/queries";
 export async function getMessageDetails(req: Request, res: Response) {
 	const id = Number(req.query.id);
-	const message = messages.find((m) => m.id === id);
-	res.render("pages/messageDetails", { message });
+	const message = await getMessage(id);
+	res.render("pages/messageDetails", { message: message[0] });
 }
